@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FadeLoader } from 'react-spinners';
 
 const Portfolio = (props) => {
     const [projects, setProjects] = useState([]);
