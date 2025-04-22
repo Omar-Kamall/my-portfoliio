@@ -25,11 +25,9 @@ const App = () => {
     },4000)
   },[])
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route>
-      <Route path='/' element={<Layout/>}>
-        <Route index element={<Home/>}/>
-        <Route path='/projects' element={<Projects/>}/>
-      </Route>
+    <Route path='/' element={<Layout/>}>
+      <Route index element={<Home/>}/>
+      <Route path='projects' element={<Projects/>}/>
     </Route>
   ))
   return (
