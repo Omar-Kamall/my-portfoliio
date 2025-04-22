@@ -1,4 +1,4 @@
-import { useState , lazy, useEffect } from 'react';
+import { useState , lazy, useEffect, Suspense } from 'react';
 import { createBrowserRouter , createRoutesFromElements , Route , RouterProvider , Outlet } from 'react-router';
 const Home = lazy (() => import ('./Pages/Home'));
 const Projects = lazy (() => import ('./Pages/Projects'));
@@ -47,7 +47,7 @@ const App = () => {
           <span>A</span>
           <span>L</span>
         </h1>
-      </div> : <RouterProvider router={router}/>}
+      </div> : <Suspense><RouterProvider router={router}/></Suspense>}
     </div>
   )
 }
