@@ -24,7 +24,7 @@ const Navbar = () => {
                     <div className="hidden lg:flex gap-5">
                         {location.pathname === "/" ?
                             <HashLink onClick={() => setactive(true)} smooth to="#Home" className={`text-[18px] hover:text-[#4A90E2] ${Active && "text-[#4A90E2]"} transition duration-300`}>HOME</HashLink> : 
-                            <Link onClick={() => setactive(true)} to="/" className={`text-[18px] hover:text-[#4A90E2] ${Active && "text-[#4A90E2]"} transition duration-300`}>HOME</Link>
+                            <Link onClick={() => setactive(true)} to="/" className={`text-[18px] hover:text-[#4A90E2] ${Active && location.pathname !== "/projects" && "text-[#4A90E2]"} transition duration-300`}>HOME</Link>
                         }
                         {links.map(link => (
                             <HashLink smooth onClick={() => {setActive(link.id) , setactive(false)}} className={`text-[18px] hover:text-[#4A90E2] ${active === link.id && !Active && (location.pathname !== link.to && location.pathname !== "Home" && location.pathname !== "/projects") && "text-[#4A90E2]"} transition duration-300`} key={link.id} to={link.to}>{link.name}</HashLink>
@@ -42,7 +42,7 @@ const Navbar = () => {
                         <div className="flex flex-col gap-2 w-43 mt-2 bg-[#0A0F1F] border-1 border-gray-600 rounded-2xl p-5">
                             {location.pathname === "/" ?
                                 <HashLink onClick={() => {setBar(false) , setactive(true)}} smooth to="#Home" className={`text-[18px] hover:text-[#4A90E2] ${Active && "text-[#4A90E2]"} transition duration-300`}>HOME</HashLink> :
-                                <Link onClick={() => {setBar(false) , setactive(true)}} to="/" className={`text-[18px] hover:text-[#4A90E2] ${Active && "text-[#4A90E2]"} transition duration-300`}>HOME</Link>
+                                <Link onClick={() => {setBar(false) , setactive(true)}} to="/" className={`text-[18px] hover:text-[#4A90E2] ${Active && location.pathname !== "/projects" && "text-[#4A90E2]"} transition duration-300`}>HOME</Link>
                             }
                             {links.map(link => (
                                 <HashLink smooth onClick={() => {setActive(link.id) , setBar(false) , setactive(false)}} className={`text-[18px] hover:text-[#4A90E2] ${active === link.id && location.pathname === "/" && !Active && "text-[#4A90E2]"} transition duration-300`} key={link.id} to={link.to}>{link.name}</HashLink>
