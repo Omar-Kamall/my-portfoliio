@@ -1,4 +1,5 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
+import { FadeLoader } from 'react-spinners';
 const Header = lazy (() => import ('../Components/Header'));
 const Service = lazy (() => import ('../Components/Service'));
 const Skill = lazy (() => import ('../Components/Skill'));
@@ -8,11 +9,21 @@ const Contact = lazy (() => import ('../Components/Contact'));
 const Home = () => {
     return (
         <div>
-            <Header className="box"/>
-            <Service className="box"/>
-            <Skill className="box"/>
-            <Portfolio className="box"/>
-            <Contact className="box"/>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center'><FadeLoader className='text-[#FF6F91]' size={20} /></div>}>
+                <Header className="box"/>
+            </Suspense>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center'><FadeLoader className='text-[#FF6F91]' size={20} /></div>}>
+                <Service className="box"/>
+            </Suspense>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center'><FadeLoader className='text-[#FF6F91]' size={20} /></div>}>
+                <Skill className="box"/>
+            </Suspense>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center'><FadeLoader className='text-[#FF6F91]' size={20} /></div>}>
+                <Portfolio className="box"/>
+            </Suspense>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center'><FadeLoader className='text-[#FF6F91]' size={20} /></div>}>
+                <Contact className="box"/>
+            </Suspense>
         </div>
     )
 }
