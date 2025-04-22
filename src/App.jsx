@@ -5,6 +5,7 @@ const Projects = lazy (() => import ('./Pages/Projects'));
 const Navbar = lazy (() => import ('./Components/Navbar'));
 const Footer = lazy (() => import ('./Components/Footer'));
 import './App.css'
+import { FadeLoader } from 'react-spinners';
 
 const Layout = () => {
   return (
@@ -47,7 +48,7 @@ const App = () => {
           <span>A</span>
           <span>L</span>
         </h1>
-      </div> : <Suspense><RouterProvider router={router}/></Suspense>}
+      </div> : <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}><RouterProvider router={router}/></Suspense>}
     </div>
   )
 }
