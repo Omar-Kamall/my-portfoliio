@@ -1,6 +1,5 @@
 import { lazy , Suspense } from 'react';
 import { FadeLoader } from 'react-spinners';
-
 const Allprojects = lazy(() => import ('../Components/Allprojects'));
 
 const Projects = () => {
