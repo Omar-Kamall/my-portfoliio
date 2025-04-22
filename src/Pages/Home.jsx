@@ -9,19 +9,19 @@ const Contact = lazy (() => import ('../Components/Contact'));
 const Home = () => {
     return (
         <div>
-            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center z-100'><FadeLoader className='text-[#FF6F91]' size={50} /></div>}>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
                 <Header className="box"/>
             </Suspense>
-            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center z-100'><FadeLoader className='text-[#FF6F91]' size={50} /></div>}>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
                 <Service className="box"/>
             </Suspense>
-            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center z-100'><FadeLoader className='text-[#FF6F91]' size={50} /></div>}>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
                 <Skill className="box"/>
             </Suspense>
-            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center z-100'><FadeLoader className='text-[#FF6F91]' size={50} /></div>}>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
                 <Portfolio className="box"/>
             </Suspense>
-            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center z-100'><FadeLoader className='text-[#FF6F91]' size={50} /></div>}>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
                 <Contact className="box"/>
             </Suspense>
         </div>

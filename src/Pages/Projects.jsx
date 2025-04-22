@@ -6,7 +6,7 @@ const Allprojects = lazy(() => import ('../Components/Allprojects'));
 const Projects = () => {
     return (
         <div>
-            <Suspense fallback={<div className='bg-[#0A0F1F] h-screen text-7xl items-center justify-center z-100'><FadeLoader className='text-[#FF6F91]' size={50} /></div>}>
+            <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
                 <Allprojects className="box"/>
             </Suspense>
         </div>
