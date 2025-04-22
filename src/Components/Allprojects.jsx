@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
+import { FadeLoader } from 'react-spinners';
 
 const Allprojects = (props) => {
     const [projects, setProjects] = useState([]);
