@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { IoCloseCircle } from 'react-icons/io5';
 import { useLocation , Link } from 'react-router-dom';
@@ -14,18 +14,8 @@ const Navbar = () => {
         {id: 1 , name: "SERVICE" , to: location.pathname === "/" ? "#service" : "/#service"},
         {id: 2 , name: "SKILLS" , to: location.pathname === "/" ? "#skills" : "/#skills"},
         {id: 3 , name: "PORTFOLIO" , to: location.pathname === "/" ? "#portfolio" : "/#portfolio"},
-        {id: 4 , name: "CONTACT" , to: location.pathname === "/" ? "#contact" : "/#contact"},
-        {id: 5 , name: "PROJECTS" , to: "/projects"}
+        {id: 4 , name: "CONTACT" , to: location.pathname === "/" ? "#contact" : "/#contact"}
     ]
-    useEffect(() => {
-        if (location.hash) {
-            const el = document.querySelector(location.hash);
-            if (el) {
-            setTimeout(() => {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }}
-    }, [location]);
     return (
         <nav className='text-white h-10 w-full top-5 z-100 fixed'>
             <div className='container mx-auto px-[5%]'>
@@ -33,8 +23,9 @@ const Navbar = () => {
                     <Link className='text-[18px] hover:text-[#4A90E2] transition duration-300' to="/"><div className="flex items-center"><img className='w-15 h-10' src={logo} alt="Image-Error" loading='lazy' />OMAR KAMAL</div></Link>
                     <div className="hidden lg:flex gap-5">
                         {links.map(link => (
-                            <HashLink smooth onClick={() => {setActive(link.id)}} className={`text-[18px] hover:text-[#4A90E2] ${active === link.id ? "text-[#4A90E2]" : ""} transition duration-300`} key={link.id} to={link.to}>{link.name}</HashLink>
+                            <HashLink smooth onClick={() => {setActive(link.id)}} className={`text-[18px] hover:text-[#4A90E2] ${active === link.id && location.pathname === "/" && "text-[#4A90E2]"} transition duration-300`} key={link.id} to={link.to}>{link.name}</HashLink>
                         ))}
+                        <Link smooth to="/projects" className={`text-[18px] hover:text-[#4A90E2] ${location.pathname === "/projects" && "text-[#4A90E2]"} transition duration-300`}>PROJECTS</Link>
                     </div>
                     <div className="lg:hidden">
                         {!bar ? <FaBars onClick={() => setBar(true)} className='hover:text-[#4A90E2] transition duration-300 cursor-pointer' size={25}/> :
@@ -46,8 +37,9 @@ const Navbar = () => {
                     {bar &&
                         <div className="flex flex-col gap-2 w-43 mt-2 bg-[#0A0F1F] border-1 border-gray-600 rounded-2xl p-5">
                             {links.map(link => (
-                                <HashLink smooth onClick={() => {setActive(link.id) , setBar(false)}} className={`text-[18px] hover:text-[#4A90E2] ${active === link.id ? "text-[#4A90E2]" : ""} transition duration-300`} key={link.id} to={link.to}>{link.name}</HashLink>
+                                <HashLink smooth onClick={() => {setActive(link.id) , setBar(false)}} className={`text-[18px] hover:text-[#4A90E2] ${active === link.id && location.pathname === "/" && "text-[#4A90E2]"} transition duration-300`} key={link.id} to={link.to}>{link.name}</HashLink>
                             ))}
+                            <Link smooth to="/projects" className={`text-[18px] hover:text-[#4A90E2] ${location.pathname === "/projects" && "text-[#4A90E2]"} transition duration-300`}>PROJECTS</Link>
                         </div>
                     }
                 </div>
