@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { IoCloseCircle } from 'react-icons/io5';
-import { useLocation } from 'react-router';
-import { Link } from 'react-router';
+import { useLocation , Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { logo } from '../../public/assets';
 

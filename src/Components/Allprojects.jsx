@@ -2,12 +2,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react'
 
 const Allprojects = (props) => {
-    const Api = "./data.json"
     const [projects, setProjects] = useState([]);
     useEffect(() => {
-        axios.get(Api)
-        .then(res => setProjects(res.data))
-        .catch(error => console.log(error))
+        const Api = async () => {
+            await axios.get("./data.json")
+            .then(res => setProjects(res.data))
+            .catch(error => console.log(error))
+        };
+        Api();
     },[])
     return (
         <section className="bg-[#0A0F1F] pb-20">

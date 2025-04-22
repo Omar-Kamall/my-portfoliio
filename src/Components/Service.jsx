@@ -1,4 +1,3 @@
-import React from 'react'
 import { AiOutlineAntDesign } from 'react-icons/ai'
 import { DiResponsive } from 'react-icons/di'
 import { GrPersonalComputer } from 'react-icons/gr'

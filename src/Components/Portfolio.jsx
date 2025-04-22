@@ -1,15 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Portfolio = (props) => {
     const [projects, setProjects] = useState([]);
-    const Api = "./data.json";
     useEffect(() => {
-        axios.get(Api)
-        .then(res => {
-            setProjects(res.data)
-        }).catch(error => console.log(error))
+        const Api = async () => {
+            await axios.get("./data.json")
+            .then(res => {
+                setProjects(res.data)
+            }).catch(error => console.log(error))
+        };
+        Api();
     },[])
     return (
         <section id='portfolio' className='bg-[#0A0F1F] scroll-mt-18'>
