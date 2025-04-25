@@ -36,9 +36,9 @@
     },
     {
         "id":5 ,
-        "img": "../assets/Screenshot 2025-04-21 182139.png",
-        "live_demo": "https://e-commerce-zeta-plum.vercel.app/",
-        "githup": "https://github.com/Omar-Kamall/E-Commerce.git",
+        "img": "../assets/Screenshot 2025-04-25 171817.png",
+        "live_demo": "https://exclusive-ecommerce-five.vercel.app/",
+        "githup": "https://github.com/Omar-Kamall/Exclusive-Ecommerce.git",
         "description": "Reactjs , Redux , Tailwindcss , Css , Firebase , Formik , Yup"
     },
     {
