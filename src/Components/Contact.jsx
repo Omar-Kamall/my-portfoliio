@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { FaFacebook, FaGithub, FaLinkedin, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import { ErrorMessage, Field, Formik , Form } from 'formik';
 import { RiMessage2Line } from 'react-icons/ri';
@@ -6,59 +6,24 @@ import * as Yup from "yup";
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
 const Contact = () => {
     // Email js
     const form = useRef();
-    // Gsap
-    useEffect(() => {
-        gsap.defaults({ ease: "power3" });
-        gsap.set(".box", { opacity: 0, y: 100 });
-
-        ScrollTrigger.batch(".box", {
-            onEnter: batch => gsap.to(batch, {
-                opacity: 1,
-                y: 0,
-                stagger: { each: 0.15, grid: [1, 3] },
-                overwrite: true
-            }),
-            onLeave: batch => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
-            onEnterBack: batch => gsap.to(batch, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.15,
-                overwrite: true
-            }),
-            onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, overwrite: true })
-        });
-
-        ScrollTrigger.addEventListener("refreshInit", () =>
-            gsap.set(".box", { y: 0 })
-        );
-
-        return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
-        };
-    }, []);
     return (
         <section id='contact' className='bg-[#0A0F1F] pb-20'>
             <div className={`container mx-auto px-[5%] grid grid-cols-1 lg:grid-cols-2`}>
                 <div>
-                    <h4 className='words text-3xl pt-25 pb-10 box'>DO YOU HAVE A PROJECT TO<br/>DISCUSS .?</h4>
-                    <div className="flex items-center gap-3 text-white text-3xl box">
+                    <h4 className='words text-3xl pt-25 pb-10'>DO YOU HAVE A PROJECT TO<br/>DISCUSS .?</h4>
+                    <div className="flex items-center gap-3 text-white text-3xl">
                         <span>Get In Touch</span>
                         <RiMessage2Line />
                     </div>
                     <div className="flex gap-10 mt-15">
-                        <div className="flex flex-col box">
+                        <div className="flex flex-col">
                             <span className='text-white text-2xl'>Contact</span>
                             <a className='text-blue-500 mt-2' href="mailto:omar.k.0000000@gmail.com">Gmail Omar</a>
                         </div>
-                        <div className="flex flex-col box">
+                        <div className="flex flex-col">
                             <span className='text-white text-2xl'>Social Media</span>
                             <div className="flex gap-3 mt-2">
                                 <a href="https://www.linkedin.com/in/omar-kamall" target='_blanck'><FaLinkedin className='text-white hover:text-[#0A66C2] transition duration-300' size={20}/></a>

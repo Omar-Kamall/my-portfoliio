@@ -4,11 +4,6 @@ import { MdEmail } from 'react-icons/md';
 import { GiSatelliteCommunication } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
-// Gsap
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
     const [downBar , setDowenBar] = useState(false);
@@ -22,36 +17,6 @@ const Header = () => {
         if(downBar)
             setTimeout(() => setDowenBar(false),5000)
     },[opencv,downBar])
-    // Gsap
-    useEffect(() => {
-        gsap.defaults({ ease: "power3" });
-        gsap.set(".box", { opacity: 0, y: 100 });
-
-        ScrollTrigger.batch(".box", {
-            onEnter: batch => gsap.to(batch, {
-                opacity: 1,
-                y: 0,
-                stagger: { each: 0.15, grid: [1, 3] },
-                overwrite: true
-            }),
-            onLeave: batch => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
-            onEnterBack: batch => gsap.to(batch, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.15,
-                overwrite: true
-            }),
-            onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, overwrite: true })
-        });
-
-        ScrollTrigger.addEventListener("refreshInit", () =>
-            gsap.set(".box", { y: 0 })
-        );
-
-        return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
-        };
-    }, []);
     return (
         <header id='Home' className='bg-[#0A0F1F] pt-35 pb-15'>
             <div className={`container mx-auto px-[5%]`}>
@@ -59,14 +24,14 @@ const Header = () => {
                     <div className="flex items-center">
                         <div>
                             <h2 className='text-[45px] lg:text-[75px] xl:text-[95px] md:text-[55px] mb-0 words box'>FRONTEND DEVELOPER</h2>
-                            <div className="flex items-center gap-3 mt-10 box">
+                            <div className="flex items-center gap-3 mt-10">
                                 <p className='text-white'>I am Omar</p>
                                 <span className='text-[#4A90E2] jop_name'>
                                     Web Developer
                                 </span>
                             </div>
-                            <p className='text-white mb-5 box'>Passion Creating Beautiful And Resbonsive Design</p>
-                            <div className="flex flex-wrap gap-5 box">
+                            <p className='text-white mb-5'>Passion Creating Beautiful And Resbonsive Design</p>
+                            <div className="flex flex-wrap gap-5">
                                 <button onClick={() => setOpencv(true)} className="text-[#4A90E2] border-2 shadow-2xl shadow-[#4A90E2] border-[#4A90E2] hover:text-[#FF6F91] hover:border-[#FF6F91] hover:shadow-[#FF6F91] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Veiw CV</button>
                                 <a href={Portfolio} download="CV-Omar-Kamal.pdf">
                                     <button className="text-[#FF6F91] border-2 shadow-2xl shadow-[#FF6F91] border-[#FF6F91] hover:text-[#4A90E2] hover:border-[#4A90E2] hover:shadow-[#4A90E2] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Dowenload CV</button>
