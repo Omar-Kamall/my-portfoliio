@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { myphoto, Portfolio } from '../../public/assets';
+import { mycv, myphoto, Portfolio } from '../../public/assets';
 import { MdEmail } from 'react-icons/md';
 import { GiSatelliteCommunication } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
@@ -68,17 +68,14 @@ const Header = () => {
                             <p className='text-white mb-5 box'>Passion Creating Beautiful And Resbonsive Design</p>
                             <div className="flex flex-wrap gap-5 box">
                                 <button onClick={() => setOpencv(true)} className="text-[#4A90E2] border-2 shadow-2xl shadow-[#4A90E2] border-[#4A90E2] hover:text-[#FF6F91] hover:border-[#FF6F91] hover:shadow-[#FF6F91] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Veiw CV</button>
-                                <a href={Portfolio} download="Portfolio-Omar-Kamal.pdf">
+                                <a href={Portfolio} download="CV-Omar-Kamal.pdf">
                                     <button className="text-[#FF6F91] border-2 shadow-2xl shadow-[#FF6F91] border-[#FF6F91] hover:text-[#4A90E2] hover:border-[#4A90E2] hover:shadow-[#4A90E2] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Dowenload CV</button>
                                 </a>
                             </div>
                         </div>
                     </div>
                     {opencv && <div onClick={() => setOpencv(false)} className="fixed inset-0 flex justify-center items-center w-full z-[999] bg-[#0A0F1F] p-[10%] cursor-pointer">
-                    <embed
-                        onClick={(e) => e.stopPropagation()}
-                        className="w-full h-full md:w-120 md:h-150 cursor-auto"
-                        src={Portfolio} type="application/pdf" width="100%" height="100%" loading="lazy"/>
+                            <img onClick={(e) => e.stopPropagation()} className='w-100 h-100 md:w-120 md:h-150 cursor-auto' src={mycv} alt="Image-Error" loading='lazy' />
                     </div>}
                     <div className="flex justify-center items-center box">
                         <img className='w-[80%] lg:w-[75%] xl:w-[60%] h-full z-10 shadow-2xl shadow-[#4A90E2] hover:shadow-[#FF6F91] rounded-3xl transition duration-500 cursor-pointer' src={myphoto} alt="Image-Error" loading='lazy' />
