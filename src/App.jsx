@@ -1,10 +1,10 @@
 import { useState , lazy, useEffect, Suspense } from 'react';
 import { createBrowserRouter , createRoutesFromElements , Route , RouterProvider , Outlet } from 'react-router';
+import { FadeLoader } from 'react-spinners';
 const Home = lazy (() => import ('./Pages/Home'));
 const Projects = lazy (() => import ('./Pages/Projects'));
 const Navbar = lazy (() => import ('./Components/Navbar'));
 const Footer = lazy (() => import ('./Components/Footer'));
-import { FadeLoader } from 'react-spinners';
 import './App.css'
 
 const Layout = () => {
