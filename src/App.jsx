@@ -4,8 +4,8 @@ const Home = lazy (() => import ('./Pages/Home'));
 const Projects = lazy (() => import ('./Pages/Projects'));
 const Navbar = lazy (() => import ('./Components/Navbar'));
 const Footer = lazy (() => import ('./Components/Footer'));
-import './App.css'
 import { FadeLoader } from 'react-spinners';
+import './App.css'
 
 const Layout = () => {
   return (
@@ -25,6 +25,7 @@ const App = () => {
       setLoading(false);
     },4000)
   },[])
+
   const router = createBrowserRouter(createRoutesFromElements(
     <Route>
       <Route path='/' element={<Layout/>}>

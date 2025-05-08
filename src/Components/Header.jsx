@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
-import { mycv, myphoto } from '../../public/assets';
-import { MdEmail } from 'react-icons/md'
-import { GiSatelliteCommunication } from 'react-icons/gi'
+import { myphoto, Portfolio } from '../../public/assets';
+import { MdEmail } from 'react-icons/md';
+import { GiSatelliteCommunication } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+// Gsap
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const Header = (props) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const Header = () => {
     const [downBar , setDowenBar] = useState(false);
     const [opencv , setOpencv] = useState(false);
     useEffect(() => {
@@ -17,26 +22,65 @@ const Header = (props) => {
         if(downBar)
             setTimeout(() => setDowenBar(false),5000)
     },[opencv,downBar])
+    // Gsap
+    useEffect(() => {
+        gsap.defaults({ ease: "power3" });
+        gsap.set(".box", { opacity: 0, y: 100 });
+
+        ScrollTrigger.batch(".box", {
+            onEnter: batch => gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                stagger: { each: 0.15, grid: [1, 3] },
+                overwrite: true
+            }),
+            onLeave: batch => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
+            onEnterBack: batch => gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.15,
+                overwrite: true
+            }),
+            onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, overwrite: true })
+        });
+
+        ScrollTrigger.addEventListener("refreshInit", () =>
+            gsap.set(".box", { y: 0 })
+        );
+
+        return () => {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        };
+    }, []);
     return (
         <header id='Home' className='bg-[#0A0F1F] pt-35 pb-15'>
-            <div className={`container mx-auto px-[5%] ${props.className}`}>
+            <div className={`container mx-auto px-[5%]`}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="flex items-center">
                         <div>
-                            <h2 className='text-[45px] lg:text-[75px] xl:text-[95px] md:text-[55px] mb-0 words'>FRONTEND DEVELOPER</h2>
-                            <p className='text-white mt-10 mb-5'>I am Omar Kamal - <span className='text-[#4A90E2]'>Frontend Developer</span> Passion<br/>For Creating Beautiful And Resbonsive Design</p>
-                            <div className="flex flex-wrap gap-5">
+                            <h2 className='text-[45px] lg:text-[75px] xl:text-[95px] md:text-[55px] mb-0 words box'>FRONTEND DEVELOPER</h2>
+                            <div className="flex items-center gap-3 mt-10 box">
+                                <p className='text-white'>I am Omar</p>
+                                <span className='text-[#4A90E2] jop_name'>
+                                    Web Developer
+                                </span>
+                            </div>
+                            <p className='text-white mb-5 box'>Passion Creating Beautiful And Resbonsive Design</p>
+                            <div className="flex flex-wrap gap-5 box">
                                 <button onClick={() => setOpencv(true)} className="text-[#4A90E2] border-2 shadow-2xl shadow-[#4A90E2] border-[#4A90E2] hover:text-[#FF6F91] hover:border-[#FF6F91] hover:shadow-[#FF6F91] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Veiw CV</button>
-                                <a href={mycv} download="My-CV.pdf">
+                                <a href={Portfolio} download="Portfolio-Omar-Kamal.pdf">
                                     <button className="text-[#FF6F91] border-2 shadow-2xl shadow-[#FF6F91] border-[#FF6F91] hover:text-[#4A90E2] hover:border-[#4A90E2] hover:shadow-[#4A90E2] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Dowenload CV</button>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    {opencv && <div onClick={() => setOpencv(false)} className="fixed inset-0 flex justify-center items-center w-full z-[999] bg-[#0A0F1F] p-[20%] md:p-[10%] cursor-pointer">
-                            <img onClick={(e) => e.stopPropagation()} className='w-100 h-90 md:w-120 md:h-150 cursor-auto' src={mycv} alt="Image-Error" loading='lazy' />
+                    {opencv && <div onClick={() => setOpencv(false)} className="fixed inset-0 flex justify-center items-center w-full z-[999] bg-[#0A0F1F] p-[10%] cursor-pointer">
+                    <embed
+                        onClick={(e) => e.stopPropagation()}
+                        className="w-full h-full md:w-120 md:h-150 cursor-auto"
+                        src={Portfolio} type="application/pdf" width="100%" height="100%" loading="lazy"/>
                     </div>}
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center box">
                         <img className='w-[80%] lg:w-[75%] xl:w-[60%] h-full z-10 shadow-2xl shadow-[#4A90E2] hover:shadow-[#FF6F91] rounded-3xl transition duration-500 cursor-pointer' src={myphoto} alt="Image-Error" loading='lazy' />
                     </div>
                 </div>

@@ -10,19 +10,19 @@ const Home = () => {
     return (
         <div>
             <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
-                <Header className="box"/>
+                <Header/>
             </Suspense>
             <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
-                <Service className="box"/>
+                <Service/>
             </Suspense>
             <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
-                <Skill className="box"/>
+                <Skill/>
             </Suspense>
             <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
-                <Portfolio className="box"/>
+                <Portfolio/>
             </Suspense>
             <Suspense fallback={<div className='bg-[#0A0F1F] h-[100vh] flex items-center justify-center'><FadeLoader color='#FF6F91' /></div>}>
-                <Contact className="box"/>
+                <Contact/>
             </Suspense>
         </div>
     )

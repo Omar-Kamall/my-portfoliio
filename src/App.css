@@ -36,6 +36,21 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.jop_name {
+  font-size: 18px;
+  width: 165px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #FF6F91;
+  animation: typing 3s steps(20, end) infinite, cursor .3s steps(2, end) infinite;
+}
+@keyframes typing {
+  0% { width: 0 }
+  100% { width: 165px }
+}
+@keyframes cursor {
+  50% { border-color: transparent }
+}
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 10px;
@@ -50,18 +65,4 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #2b80e0;
-}
-/* Animatoin */
-.box {
-  animation: animate 3s linear;
-}
-@keyframes animate {
-  0%{
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-  100%{
-    transform: translateY(0px);
-    opacity: 1;
-  }
 }

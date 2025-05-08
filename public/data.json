@@ -53,6 +53,6 @@
         "img": "../assets/Screenshot 2025-04-22 203802.png",
         "live_demo": "https://portfoliio-omar-kamal.vercel.app/",
         "githup": "https://github.com/Omar-Kamall/my-portfoliio.git",
-        "description": "Reactjs , Css , Tailwindcss , Emailjs , Formik , Yup , Axios"
+        "description": "Reactjs , Css , Tailwindcss , Emailjs , Formik , Yup , Axios , Gsap"
     }
 ]
