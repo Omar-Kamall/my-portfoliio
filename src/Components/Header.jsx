@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { mycv, myphoto, Portfolio } from '../../public/assets';
+import { mycv, myphoto, CV } from '../../public/assets';
 import { MdEmail } from 'react-icons/md';
 import { GiSatelliteCommunication } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
@@ -45,7 +45,7 @@ const Header = () => {
                             <p className='text-white mb-5'>Passion Creating Beautiful And Resbonsive Design</p>
                             <div className="flex flex-wrap gap-5">
                                 <button onClick={() => setOpencv(true)} className="text-[#4A90E2] border-2 shadow-2xl shadow-[#4A90E2] border-[#4A90E2] hover:text-[#FF6F91] hover:border-[#FF6F91] hover:shadow-[#FF6F91] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Veiw CV</button>
-                                <a href={Portfolio} download="CV-Omar-Kamal.pdf">
+                                <a href={CV} download="CV-Omar-Kamal.pdf">
                                     <button className="text-[#FF6F91] border-2 shadow-2xl shadow-[#FF6F91] border-[#FF6F91] hover:text-[#4A90E2] hover:border-[#4A90E2] hover:shadow-[#4A90E2] py-3 px-10 transition duration-500 cursor-pointer rounded-3xl">Dowenload CV</button>
                                 </a>
                             </div>
