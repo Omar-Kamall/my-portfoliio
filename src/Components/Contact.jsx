@@ -38,7 +38,7 @@ const Contact = () => {
                         <div className="flex flex-col" data-aos="fade-down">
                             <span className='text-white text-2xl'>Social Media</span>
                             <div className="flex gap-3 mt-2">
-                                <a href="https://www.linkedin.com/in/omar-kamall" target='_blanck'><FaLinkedin className='text-white hover:text-[#0A66C2] transition duration-300' size={20}/></a>
+                                <a href="https://linkedin.com/in/omar-kamal-cs" target='_blanck'><FaLinkedin className='text-white hover:text-[#0A66C2] transition duration-300' size={20}/></a>
                                 <a href="https://api.whatsapp.com/send?phone=1006677452" target='_blanck'><FaWhatsapp className='text-white hover:text-[#25D366] transition duration-300' size={20}/></a>
                                 <a href="https://www.facebook.com/share/1XGSjjVvVn/?mibextid=wwXIfr" target='_blanck'><FaFacebook className='text-white hover:text-[#1877F2] transition duration-300' size={20} /></a>
                                 <a href="https://t.me/OmarKamall" target='_blanck'><FaTelegramPlane className='text-white hover:text-[#0088cc] transition duration-300' size={20}/></a>

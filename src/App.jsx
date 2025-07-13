@@ -5,7 +5,7 @@ const Home = lazy (() => import ('./Pages/Home'));
 const Projects = lazy (() => import ('./Pages/Projects'));
 const Navbar = lazy (() => import ('./Components/Navbar'));
 const Footer = lazy (() => import ('./Components/Footer'));
-import './App.css'
+import './App.css';
 
 const Layout = () => {
   return (

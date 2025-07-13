@@ -61,7 +61,7 @@ const Header = () => {
                 <div className="flex justify-end">
                     <div className="text-white fixed bottom-5 z-100">
                         <div className="flex">
-                            {downBar && <a href="https://www.linkedin.com/in/omar-kamall"><FaLinkedin className='rounded-full text-end px-4 py-5 mb-2 mr-3 mt-5 ml-5 bg-gray-800 cursor-pointer' color='blue' size={65}/></a>}
+                            {downBar && <a href="https://linkedin.com/in/omar-kamal-cs"><FaLinkedin className='rounded-full text-end px-4 py-5 mb-2 mr-3 mt-5 ml-5 bg-gray-800 cursor-pointer' color='blue' size={65}/></a>}
                             {downBar && <a href="mailto:omar.k.0000000@gmail.com"><MdEmail className='rounded-full text-end px-4 py-5 mb-5 bg-gray-800 cursor-pointer' color='red' size={65}/></a>}
                         </div>
                         <div className="flex">

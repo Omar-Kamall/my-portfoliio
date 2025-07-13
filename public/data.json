@@ -53,6 +53,13 @@
         "img": "../assets/Screenshot 2025-04-22 203802.png",
         "live_demo": "https://portfoliio-omar-kamal.vercel.app/",
         "githup": "https://github.com/Omar-Kamall/my-portfoliio.git",
-        "description": "Reactjs , Css , Tailwindcss , Emailjs , Formik , Yup , Axios , Gsap"
+        "description": "Reactjs , Css , Tailwindcss , Emailjs , Formik , Yup , Axios , AOS"
+    },
+    {
+        "id":8 ,
+        "img": "../assets/Screenshot 2025-07-13 195632.png",
+        "live_demo": "https://freelance-travel.vercel.app/",
+        "githup": "https://github.com/Omar-Kamall/freelance-travel.git",
+        "description": "Reactjs , Tailwindcss , Css , Strapi , Formik , Yup , Axios , AOS"
     }
 ]
