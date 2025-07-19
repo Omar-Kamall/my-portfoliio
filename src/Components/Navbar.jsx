@@ -20,7 +20,7 @@ const Navbar = () => {
         <nav className='text-white h-10 w-full top-5 z-100 fixed'>
             <div className='container mx-auto px-[5%]'>
                 <div className="flex items-center justify-between bg-[#0A0F1F] border-1 border-gray-600 p-5 rounded-2xl">
-                    <Link onClick={() => setactive(true)} className='text-[18px] hover:text-[#4A90E2] transition duration-300' to="/"><div className="flex items-center"><img className='w-15 h-10' src={logo} alt="Image-Error" loading='lazy' />OMAR KAMAL</div></Link>
+                    <Link onClick={() => setactive(true)} className='text-[18px] hover:text-[#4A90E2] transition duration-300' to="/"><div className="flex items-center"><img className='w-15 h-10' src={logo} alt="Image-Error" loading='lazy' />&#8826; Omar Kamal &#8726;    &#8827;</div></Link> <br />
                     <div className="hidden lg:flex gap-5">
                         {location.pathname === "/" ?
                             <HashLink onClick={() => setactive(true)} smooth to="#Home" className={`text-[18px] hover:text-[#4A90E2] ${Active && "text-[#4A90E2]"} transition duration-300`}>HOME</HashLink> : 
