@@ -31,14 +31,14 @@ const Layout = () => {
   }, [location.pathname]);
   return (
     <>
-      {["top-right", "top-left"].map((origin, idx) => (
+      { window.innerWidth > 700 && ["top-right", "top-left"].map((origin, idx) => (
         <LightRays
           key={idx}
           raysOrigin={origin}
           raysColor="#00ffff"
           raysSpeed={1.5}
-          lightSpread={1.5}
-          rayLength={3.0}
+          lightSpread={1.2}
+          rayLength={1.5}
           followMouse
           mouseInfluence={0.1}
           noiseAmount={0.1}
@@ -46,6 +46,21 @@ const Layout = () => {
           className="fixed h-screen w-screen -z-10 pointer-events-none"
         />
       ))}
+
+      { window.innerWidth < 700 &&
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={1.2}
+          rayLength={1.5}
+          followMouse
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="fixed h-screen w-screen -z-10 pointer-events-none"
+        />
+      }
 
       <Navbar />
       <Outlet />
