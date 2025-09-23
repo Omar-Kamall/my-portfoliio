@@ -79,13 +79,13 @@ const Contact = () => {
                         <Form ref={form} className='flex flex-col justify-center'>
                             <span className='text-white text-2xl my-8' data-aos="fade-down">Contact Form</span>
                             <label className='text-white ml-5' htmlFor="Name" data-aos="fade-down">Name</label>
-                            <Field data-aos="fade-down" id="Name" className="py-2 px-5 my-2 rounded-3xl border-2 border-gray-600 text-[#4A90E2]" type="text" name="name" placeholder="Your Name" inputmode="url"/>
+                            <Field data-aos="fade-down" id="Name" className="py-2 px-5 my-2 rounded-3xl border-2 border-gray-600 text-[#4A90E2]" type="text" name="name" placeholder="Your Name"/>
                             <ErrorMessage data-aos="fade-down" className='text-[#FF6F91] px-5 text-[15px]' name='name' component="div"/>
                             <label data-aos="fade-down" className='text-white ml-5' htmlFor="Email">Email</label>
-                            <Field data-aos="fade-down" id="Email" className="py-2 px-5 my-2 rounded-3xl border-2 border-gray-600 text-[#4A90E2]" type="text" name="email" placeholder="Your Email" inputmode="email"/>
+                            <Field data-aos="fade-down" id="Email" className="py-2 px-5 my-2 rounded-3xl border-2 border-gray-600 text-[#4A90E2]" type="text" name="email" placeholder="Your Email"/>
                             <ErrorMessage data-aos="fade-down" className='text-[#FF6F91] px-5 text-[15px]' name='email' component="div"/>
                             <label data-aos="fade-down" className='text-white ml-5' htmlFor="Message">Message</label>
-                            <Field data-aos="fade-down" id="Message" className="py-2 px-5 my-2 rounded-3xl border-2 border-gray-600 text-[#4A90E2]" as="textarea" name="message" placeholder="Your Message" inputmode="url"/>
+                            <Field data-aos="fade-down" id="Message" className="py-2 px-5 my-2 rounded-3xl border-2 border-gray-600 text-[#4A90E2]" as="textarea" name="message" placeholder="Your Message"/>
                             <ErrorMessage data-aos="fade-down" className='text-[#FF6F91] px-5 text-[15px]' name='message' component="div"/>
                             <button data-aos="fade-down" type='submit' className="text-[#FF6F91] mt-5 w-50 border-2 shadow-2xl shadow-[#FF6F91] border-[#FF6F91] hover:text-[#4A90E2] hover:border-[#4A90E2] hover:shadow-[#4A90E2] py-2 px-7 transition duration-500 cursor-pointer rounded-3xl" disabled={isSubmitting}>{isSubmitting ? "Sending ..." : "Send"}</button>
                         </Form>

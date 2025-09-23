@@ -10,8 +10,8 @@ const Projects = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta name="title" content="Omar Kamal - بورتفيليو شخصي" />
-                <meta property="og:title" content="Omar Kamal - بورتفيليو شخصي" />
+                <meta name="title" content="Omar Kamal | Portfolio" />
+                <meta property="og:title" content="Omar Kamal | Portfolio" />
                 <meta name="description" content="View my personal work and technical projects on my personal portfolio" />
                 <meta property="og:description" content="View my personal work and technical projects on my personal portfolio" />
                 <meta name="keywords" content="Omar Kamal , Portfolio , Frontend Developer , Web Developer , Software Engineering , مهندس برمجيات , بورتفيليو , مطور واجهه اماميه ,  عمر كمال" />
