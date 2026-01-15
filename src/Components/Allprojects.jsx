@@ -33,7 +33,7 @@ const Allprojects = () => {
                     <h4 className='words text-3xl pt-28 py-8' data-aos="fade-dowen">ALL PROJECTS</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                         {projects.map(project => (
-                            <div key={project.id} className="overflow-hidden">
+                            <div key={project.id}>
                                 <div className="border-1 border-gray-600 p-7 md:p-5 rounded-2xl" data-aos="fade-dowen">
                                     <img className='rounded mb-5' src={project.img} alt="Image-Error" loading='lazy' />
                                     <p className='text-white text-[15px] mb-5 h-10'>{project.description}</p>
