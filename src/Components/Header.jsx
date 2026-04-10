@@ -38,7 +38,7 @@ const Header = () => {
           <div className="flex items-center">
             <div data-aos="fade-right">
               <h2 className="text-[45px] lg:text-[75px] xl:text-[95px] md:text-[55px] mb-0 words box">
-                FRONTEND ENGINEER
+                MERNSTACK ENGINEER
               </h2>
               <div className="flex items-center gap-3 mt-10">
                 <p className="text-white">I am Omar</p>
